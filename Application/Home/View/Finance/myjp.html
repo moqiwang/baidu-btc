@@ -1,21 +1,21 @@
 <include file="Public:header" />
 <div class="autobox">
  <div class="now">
-  <a href="/" class="orange">首页</a> &gt; <a href="/finance/" class="orange">财务中心</a> &gt; 我的奖品
+  <a href="/" class="orange">home page</a> &gt; <a href="/finance/" class="orange">Financial Center</a> &gt; My prize
  </div>
  <div class="assets_center clear po_re zin70">
-  <!--左侧菜单-->
+  <!--Left menu-->
   <include file="Finance:left" />
-  <!--右侧内容-->
+  <!--Right content-->
   <div class="assets_content w900 right bg_w">
             <div class="safe_center clear" style="padding-left: 0px; border-bottom: 2px solid #e55600;">
-    <h1 style="margin-top: 0px; margin-bottom: 15px; line-height: 15px;">我的奖品</h1>
+    <h1 style="margin-top: 0px; margin-bottom: 15px; line-height: 15px;">My prize</h1>
    </div>
    <div class="sj" style="top: 40px; left: 60px;"></div>
    <br>
     <div class="nav_info" style="padding-left: 26px;">
     <p>
-     <i></i><span>可以查看您的推荐奖励!</span>
+     <i></i><span>Can view your recommended incentives!</span>
     </p>
    </div>
    <br>
@@ -27,13 +27,13 @@
        <table class="f_table" id="investLog_content">
         <thead>
          <tr>
-          <th id="">下家用户名</th>
-          <th id="">奖励类型</th>
-          <th id="">奖励说明</th>
-          <th id="">操作时间</th>
-          <th id="">操作金额</th>
-          <th id="">奖励金额</th>
-          <th id="">奖励状态</th>
+          <th id="">The family name</th>
+          <th id="">Reward type</th>
+          <th id="">Reward description</th>
+          <th id="">Operation time</th>
+          <th id="">Operation amount</th>
+          <th id="">Bonus amount</th>
+          <th id="">Reward status</th>
          </tr>
         </thead>
         <tbody>
@@ -45,7 +45,7 @@
           <td>{$vo.addtime|addtime}</td>
           <td>{$vo['num']|NumToStr}</td>
           <td>{$vo['fee']|NumToStr}</td>
-          <td><eq name="vo.status" value="0"> <font class="sell">未到账 </font></eq> <eq name="vo.status" value="1"> <font class="buy">已到账 </font></eq></td>
+          <td><eq name="vo.status" value="0"> <font class="sell">Not account</font></eq> <eq name="vo.status" value="1"> <font class="buy">Arrival account</font></eq></td>
          </tr>
          </volist>
         </tbody>
@@ -64,7 +64,7 @@
 <br>
 <br>
 <script>
-	//菜单高亮
+	//Menu highlighting
 	$('#finance_box').addClass('active');
 	$('#finance_myjp').addClass('active');
 	$('#finance_myjp i').attr('class','coin_menu_op_19');
