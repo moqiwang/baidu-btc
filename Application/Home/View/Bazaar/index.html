@@ -7,22 +7,22 @@
 					<div class="f_title_span left">
 						<span class="current">
 						<i></i>
-							<a href="{:U('/Bazaar/index')}">集市交易</a>
+							<a href="{:U('/Bazaar/index')}">Fair trade</a>
 						</span>
 						<span class="">
-							<a href="{:U('/Bazaar/mysell')}">我的委托卖出</a>
+							<a href="{:U('/Bazaar/mysell')}">My commission to sell</a>
 						</span>
 						<span class="">
-							<a href="{:U('/Bazaar/whole')}">全站成交记录</a>
+							<a href="{:U('/Bazaar/whole')}">Total station transaction record</a>
 						</span>
 						<span class="">
-							<a href="{:U('/Bazaar/mybuy')}">我的买入记录</a>
+							<a href="{:U('/Bazaar/mybuy')}">My buying record</a>
 						</span>
 					</div>
 				</div>
 				<notempty name="C['bazaar_text_log']">
 				<div class="mytips">
-					<h6 style="color: #ff8000;">温馨提示</h6>
+					<h6 style="color: #ff8000;">kindly reminder</h6>
 					{$C['bazaar_text_log']}
 				</div>
 				</notempty>
@@ -35,14 +35,14 @@
 										<option value="{$key}"<eq name="coin" value="$key">selected</eq>>{$vo['title']}</option>
 										</volist>
 								</select></th>
-								<th id="sublist-grid_c1">总数量</th>
-								<th id="sublist-grid_c2">剩余数量</th>
-								<th id="sublist-grid_c3">单价</th>
-								<th id="sublist-grid_c3">总金额</th>
-								<th id="sublist-grid_c4">佣金比例</th>
-								<th id="sublist-grid_c4">佣金金额</th>
-								<th id="sublist-grid_c5">委托时间</th>
-								<th id="sublist-grid_c6">操作</th>
+								<th id="sublist-grid_c1"> total number</th>
+								<th id="sublist-grid_c2">Residual quantity</th>
+								<th id="sublist-grid_c3">unit-price</th>
+								<th id="sublist-grid_c3"> aggregate amount</th>
+								<th id="sublist-grid_c4">commission rate</th>
+								<th id="sublist-grid_c4">Commission amount</th>
+								<th id="sublist-grid_c5">Commission time</th>
+								<th id="sublist-grid_c6">operate</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -70,36 +70,36 @@
 <div class="okcoinPop" id="withdrawCnyAddress" style="display: none;">
 	<div class="dialog_content" id="dialog_content_CnyAddress" style="margin-left: 0px; margin-top: 150px; left: 550px; top: 21px;">
 		<div class="dialog_title" id="dialog_title_CnyAddress">
-			<span id="CnyAddressTitle">购买确认</span>
-			<a href="javascript:closeAddress();" class="dialog_closed" title="关闭"></a>
+			<span id="CnyAddressTitle">Purchase confirmation</span>
+			<a href="javascript:closeAddress();" class="dialog_closed" title="close"></a>
 		</div>
 		<div class="dialog_body center">
 			<div style="line-height: 35px; text-align: left; padding-left: 50px;">
 				<ul class="PopLayer">
 					<input id="bazaar_id" type="hidden" value="">
 					<li>
-						<span class="c2" id="lotteryAmountSpan">集市市场:</span>
+						<span class="c2" id="lotteryAmountSpan">Market market:</span>
 						<span id="bazaar_coin"></span>
 					</li>
 					<li>
-						<span class="c2" id="lotteryAmountSpan">集市单价:</span>
+						<span class="c2" id="lotteryAmountSpan">Market unit price:</span>
 						<span id="bazaar_price" style="color: red;"></span>
 					</li>
 					<li>
-						<span class="c2" id="lotteryAmountSpan">剩余数量:</span>
+						<span class="c2" id="lotteryAmountSpan">Residual quantity:</span>
 						<span id="bazaar_shen" style="color: red;"></span>
 					</li>
 					<li>
-						<span class="c2" id="lotteryAmountSpan">买入数量:</span>
+						<span class="c2" id="lotteryAmountSpan">Buy quantity:</span>
 						<input name="name" id="bazaar_num" type="text" class="cztxinput" style="width: 100px; padding: 2px; padding-bottom: 5px;">
 					</li>
 					<li>
-						<span class="c2" id="lotteryAmountSpan">交易密码:</span>
+						<span class="c2" id="lotteryAmountSpan">Trader Password:</span>
 						<input name="name" id="bazaar_paypassword" type="password" class="cztxinput" style="width: 100px; padding: 2px; padding-bottom: 5px;">
-						<a href="{:U('/Login/findpaypwd')}" class="reg_floatr">忘记?</a>
+						<a href="{:U('/Login/findpaypwd')}" class="reg_floatr">forget?</a>
 					</li>
 					<li>
-						<a href="javascript:void(0)" onclick="Update()" class="btn" id="btn" style="">立 即 购 买</a>
+						<a href="javascript:void(0)" onclick="Update()" class="btn" id="btn" style=""> BUY IT NOW</a>
 					</li>
 				</ul>
 			</div>
@@ -140,17 +140,17 @@ $('#dialogBoxShadow').height($(document).height());
 		var paypassword=$("#bazaar_paypassword").val();
 		
 		if(id==""||id==null){
-			layer.msg('参数错误',{icon:1});
+			layer.msg('parameter error',{icon:1});
 			window.setTimeout("window.location='/Bazaar/log'",1000);
 		}
 		
 		
 		if(num==""||num==null){
-			layer.tips('请输入数量',"#bazaar_num",{tips:1});
+			layer.tips('Please enter quantity',"#bazaar_num",{tips:1});
 			return false;
 		}
 		if(paypassword==""||paypassword==null){
-			layer.tips('请输入交易密码',"#bazaar_paypassword",{tips:1});
+			layer.tips('Please enter the transaction password',"#bazaar_paypassword",{tips:1});
 			return false;
 		}
 		
@@ -172,7 +172,7 @@ $('#dialogBoxShadow').height($(document).height());
 
 </script>
 <script>
-	//顶部菜单高亮
+	//Top menu highlighting
 	$('#menu_top_bazaar').addClass('current');
 </script>
 <include file="Public:footer" />
