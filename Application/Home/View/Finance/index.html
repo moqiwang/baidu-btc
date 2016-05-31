@@ -4,7 +4,7 @@
 
 <div class="autobox">
 	<div class="now">
-		<a href="/" class="orange">首页</a> &gt; 财务中心
+		<a href="/" class="orange">home page</a> &gt; Financial Center
 	</div>
 	<div class="assets_center clear po_re zin70">
 		
@@ -15,7 +15,7 @@
             <div id="widget" style="top: 0px;background: #ffffff;width: 950px;border-right: 1px solid #d5d5d5;">
    
                 <div class="safe_center clear" style="padding-left: 0px; border-bottom: 2px solid #e55600;">
-    <h1 style="margin-top: 0px; margin-bottom: 15px; line-height: 15px;">财务中心</h1>
+    <h1 style="margin-top: 0px; margin-bottom: 15px; line-height: 15px;">Financial Center</h1>
    </div>
    <div class="sj" style="top: 40px; left: 60px;"></div>
 
@@ -23,20 +23,20 @@
                 
                 <div class="coin_style_box">
                     <ul>
-                        <li><img src="__PUBLIC__/Home/images/coin_rmb.png" alt="" />　人民币(CNY)</li>
-                        <li>可用：<span class="green" id="cny_balance">￥{$cny['ky']|NumToStr}</span></li>
-                        <li>冻结：<span class="orange" id="cny_lock">￥{$cny['dj']|NumToStr}</span></li>
-                        <li style="width: 250px;">总资产：<b id="cny_total">￥{$cny['zj']|NumToStr}</b></li>
+                        <li><img src="__PUBLIC__/Home/images/coin_rmb.png" alt="" />　RMB(CNY)</li>
+                        <li>available：<span class="green" id="cny_balance">￥{$cny['ky']|NumToStr}</span></li>
+                        <li>frozen：<span class="orange" id="cny_lock">￥{$cny['dj']|NumToStr}</span></li>
+                        <li style="width: 250px;">total assets：<b id="cny_total">￥{$cny['zj']|NumToStr}</b></li>
                     </ul>
                 </div>
                 <div class="coin_list_top">
                     <ul>
-                        <li class="" style="width: 180px;">币种</li>
-                        <li class="" style="width: 150px;">可用余额</li>
-                        <li class="" style="width: 150px;">冻结委托</li>
-                        <li class="" style="width: 150px;">总计</li>
-                        <li class="" style="width: 150px;">折合 (￥)</li>
-                        <li class="" style="width: 60px;">操作</li>
+                        <li class="" style="width: 180px;">currency</li>
+                        <li class="" style="width: 150px;">Available balance</li>
+                        <li class="" style="width: 150px;">Freeze Commission</li>
+                        <li class="" style="width: 150px;">total</li>
+                        <li class="" style="width: 150px;">Equivalent(￥)</li>
+                        <li class="" style="width: 60px;">operation</li>
                     </ul>
                 </div>
             </div>
@@ -59,7 +59,7 @@
                        <dd class="" style="width: 150px;">{$vo['xnbz']|NumToStr}</dd>
                        <dd class="" style="width: 150px;">{$vo['zhehe']|NumToStr}</dd>
                        <dd class="" style="width: 60px;">
-       <input type="button" value="去交易"  onclick="top.location='/trade/index/market/{$vo.name}_cny'"  />
+       <input type="button" value="To trade"  onclick="top.location='/trade/index/market/{$vo.name}_cny'"  />
       </dd>
                        </dl></li>
                         
@@ -82,7 +82,7 @@
 }
 </style>
 <script type="text/javascript">
-	//隔行变色
+	//Interlaced discoloration
 	function change_bg(id) {
 		var oCoin_list = $('#' + id);
 		var oC_li = oCoin_list.find('li');
@@ -105,7 +105,7 @@
 		for (var i = 0; i < oC_li.length; i++)
 			oC_li.eq(i).css('background-color', i % 2 ? col1 : col2);
 	}
-	//移入行变色
+	//Shift to color
 	function change_line_bg(id, tag, nobg) {
 		var oCoin_list = $('#' + id);
 		var oC_li = oCoin_list.find(tag);
@@ -156,7 +156,7 @@
 
 <script>
 $("title").html("{:C('web_title')} - 财务中心"); 
-	//菜单高亮
+	//Menu highlighting
 	$('#finance_box').addClass('active');
 	$('#finance_index').addClass('active');
 	$('#finance_index i').attr('class', 'coin_menu_op_0');
