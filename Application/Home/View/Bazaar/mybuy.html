@@ -6,24 +6,24 @@
 				<div class="f_title clearfix">
 					<div class="f_title_span left">
 						<span class="">
-							<a href="/Bazaar">集市交易</a>
+							<a href="/Bazaar">Fair trade</a>
 						</span>
 						<span class="">
-							<a href="/Bazaar/mysell">我的委托卖出</a>
+							<a href="/Bazaar/mysell">My commission to sell</a>
 						</span>
 					
 						<span class="">
-							<a href="/Bazaar/whole">全站成交记录</a>
+							<a href="/Bazaar/whole">Total station transaction record</a>
 						</span>
 						<span class="current">
 							<i></i>
-							<a href="/Bazaar/mybuy">我的买入记录</a>
+							<a href="/Bazaar/mybuy">My buying record</a>
 						</span>
 					</div>
 				</div>
 				<notempty name="C['bazaar_text_my']">
 				<div class="mytips">
-					<h6 style="color: #ff8000;">温馨提示</h6>
+					<h6 style="color: #ff8000;">reminder</h6>
 					{$C['bazaar_text_my']}
 				</div>
 				</notempty>
@@ -36,11 +36,11 @@
 										<option value="{$key}"<eq name="coin" value="$key">selected</eq>>{$vo['title']}</option>
 										</volist>
 								</select></th>
-								<th id="sublist-grid_c1">成交数量</th>
-								<th id="sublist-grid_c2">单价</th>
-								<th id="sublist-grid_c3">总金额</th>
-								<th id="sublist-grid_c3">总佣金</th>
-								<th id="sublist-grid_c4">成交时间</th>
+								<th id="sublist-grid_c1">Number of transactions</th>
+								<th id="sublist-grid_c2">Unit Price</th>
+								<th id="sublist-grid_c3">Total amount</th>
+								<th id="sublist-grid_c3">Total Commission</th>
+								<th id="sublist-grid_c4">Closing time</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -63,7 +63,7 @@
 	</div>
 </div>
 <script>
-	//顶部菜单高亮
+	//Top menu highlighting
 	$('#menu_top_bazaar').addClass('current');
 </script>
 <include file="Public:footer" />
