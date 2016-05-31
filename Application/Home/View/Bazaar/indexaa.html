@@ -7,25 +7,25 @@
 					<div class="f_title_span left">
 						<span class="current">
 							<i></i>
-							<a href="{:U('/Bazaar')}">集市交易</a>
+							<a href="{:U('/Bazaar')}">Fair trade</a>
 						</span>
 						<span class="">
-							<a href="{:U('/Bazaar/mysell')}">我的委托卖出</a>
+							<a href="{:U('/Bazaar/mysell')}">My commission to sell</a>
 						</span>
 						<span class="">
-							<a href="{:U('/Bazaar/log')}">逛集市</a>
+							<a href="{:U('/Bazaar/log')}">Fair market</a>
 						</span>
 						<span class="">
-							<a href="{:U('/Bazaar/whole')}">全站成交记录</a>
+							<a href="{:U('/Bazaar/whole')}">Total station transaction record</a>
 						</span>
 						<span class="">
-							<a href="{:U('/Bazaar/mybuy')}">我的买入记录</a>
+							<a href="{:U('/Bazaar/mybuy')}">My buying record</a>
 						</span>
 					</div>
 				</div>
 				<notempty name="C['bazaar_text_index']">
 				<div class="mytips">
-					<h6 style="color: #ff8000;">温馨提示</h6>
+					<h6 style="color: #ff8000;">reminder</h6>
 					{$C['bazaar_text_index']}
 				</div>
 				</notempty>
@@ -33,7 +33,7 @@
 					<div class="choosebanks" style="margin-top: 20px;">
 						<div class="methodway clearfix">
 							<div class="w_div clearfix" id="cz_alipay">
-								<div class="w1">集市市场：</div>
+								<div class="w1">Market market：</div>
 								<div class="w2">
 									<select name="type" id="coin_selectTest" style="width: 110px; height: 38px;">
 										<volist name=":C('coin_list')" id="vo">
@@ -43,40 +43,40 @@
 								</div>
 							</div>
 							<div class="w_div clearfix">
-								<div class="w1">{:C('coin')[$coin]['title']}余额：</div>
+								<div class="w1">{:C('coin')[$coin]['title']}balance：</div>
 								<div class="w2" style="color: #ff8000; font-size: 18px;">￥{$user['coin'][$coin]|default="0"}</div>
 							</div>
 							<div class="w_div clearfix">
-								<div class="w1">集市委托冻结：</div>
+								<div class="w1">Market Commission freeze：</div>
 								<div class="w2" style="font-size: 18px;">￥{$dongjie|default="0"}</div>
 							</div>
 							<div class="w_div clearfix">
-								<div class="w1">卖出单价：</div>
+								<div class="w1">Sell unit price：</div>
 								<div class="w2">
 									<input type="text" class="cztxinput" id="bazaar_price" value="">
 								</div>
 							</div>
 							<div class="w_div clearfix">
-								<div class="w1">交易数量：</div>
+								<div class="w1">Number of transactions：</div>
 								<div class="w2">
 									<input type="text" class="cztxinput" id="bazaar_num" value="">
 								</div>
 							</div>
 							<div class="w_div clearfix">
-								<div class="w1">佣金比例：</div>
+								<div class="w1">commission rate：</div>
 								<div class="w2" style="font-size: 18px;">{:C('bazaar_fee')}%</div>
 							</div>
 							<div class="w_div clearfix">
-								<div class="w1">交易密码：</div>
+								<div class="w1">Transaction password：</div>
 								<div class="w2">
 									<input type="password" class="cztxinput" id="bazaar_paypassword" value="">
-									<a href="{:U('/Login/findpaypwd')}" class="reg_floatr">忘记密码?</a>
+									<a href="{:U('/Login/findpaypwd')}" class="reg_floatr">Forget password?</a>
 								</div>
 							</div>
 							<div class="w_div clearfix">
 								<div class="w1">&nbsp;</div>
 								<div class="w2">
-									<input type="button" class="btn-cztx" id="btn-submit" onclick="Update()" value="确认卖出" title="确认卖出">
+									<input type="button" class="btn-cztx" id="btn-submit" onclick="Update()" value="Confirm sell" title="Confirm sell">
 								</div>
 							</div>
 						</div>
@@ -97,15 +97,15 @@
 		var price=$('#bazaar_price').val();
 		var paypassword=$('#bazaar_paypassword').val();
 		if(num==""||num==null){
-			layer.tips('请输入数量','#bazaar_num',{tips:3});
+			layer.tips('Please enter quantity','#bazaar_num',{tips:3});
 			return false;
 		}
 		if(price==""||price==null){
-			layer.tips('请输入价格','#bazaar_price',{tips:3});
+			layer.tips('Please enter the price','#bazaar_price',{tips:3});
 			return false;
 		}
 		if(paypassword==""||paypassword==null){
-			layer.tips('请输入交易密码','#bazaar_paypassword',{tips:3});
+			layer.tips('Please enter the transaction password','#bazaar_paypassword',{tips:3});
 			return false;
 		}
 		$.post("{:U('Bazaar/index')}",{coin:coin,num:num,price:price,paypassword:paypassword},function(data){
@@ -122,7 +122,7 @@
 	}
 </script>
 <script>
-	//顶部菜单高亮
+	//Top menu highlighting
 	$('#menu_top_game').addClass('current');
 </script>
 <include file="Public:footer" />
